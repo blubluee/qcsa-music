@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="wrapper">
+    <div class="main">
     <Carousel></Carousel>
     <div>
       <p style="margin:15px 0;font-size:20px; user-select:none;">推荐歌单</p>
@@ -11,6 +12,7 @@
       <RecommandSinger :singers='singers'></RecommandSinger>
     </div>
 
+  </div>
   </div>
 </template>
 
@@ -68,4 +70,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.wrapper {
+  width: 100vw;
+  .main {
+    max-width: 65%;
+    margin: 0 auto;
+  }
+}
 </style>

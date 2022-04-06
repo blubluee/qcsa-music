@@ -9,4 +9,16 @@ export const reqSingerCatList = (params) => {
   })
 }
 
+// 获取歌手详情信息
+export const reqSingerInfo = (id) => {
+  return request({
+    url: '/artist/detail',
+    method: 'get',
+    params: {
+      id
+    }
+  })
+}
+
+
 

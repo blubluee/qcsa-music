@@ -59,6 +59,14 @@ const routes = [{
         meta: {
           isShow: true
         }
+      },
+      {
+        path: 'singerInfo',
+        name: 'singerInfo',
+        component: () => import('@/views/Singer_info'),
+        meta: {
+          isShow: true
+        }
       }
     ],
     

@@ -1,14 +1,14 @@
 <template>
   <div id="app">
-    <Header v-show="$route.meta.isShow"></Header>
-    <router-view />
-    <Footer v-show="$route.meta.isShow"></Footer>
-    <div class="fly bg-fly-circle1"></div>
-    <div class="fly bg-fly-circle2"></div>
-    <div class="fly bg-fly-circle3"></div>
-    <div class="fly bg-fly-circle4"></div>
-    <BackTop></BackTop>
-    <Playbar></Playbar>
+      <Header v-show="$route.meta.isShow"></Header>
+      <router-view />
+      <Footer v-show="$route.meta.isShow"></Footer>
+      <div class="fly bg-fly-circle1"></div>
+      <div class="fly bg-fly-circle2"></div>
+      <div class="fly bg-fly-circle3"></div>
+      <div class="fly bg-fly-circle4"></div>
+      <BackTop></BackTop>
+      <Playbar></Playbar>
   </div>
 </template>
 
@@ -34,7 +34,7 @@ export default {
 @import "./assets/styles/iconfont.css";
 #app {
   width: 65%;
-  margin: 10px auto 0;
+  margin-top: 10px;
 }
 .fly {
   pointer-events: none;

@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" v-show="playing">
     <div class="player">
       <div class="player-left">
         <span class="iconfont icon-shangyishou"></span>

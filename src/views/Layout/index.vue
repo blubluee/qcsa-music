@@ -21,8 +21,8 @@ export default {
   min-height: calc(100vh - 65px);
   z-index: 998;
   width: auto;
-  margin-bottom: 160px;
   min-width: 1024px;
+  padding-top: 70px;
   .fluid {
     min-height: 100%;
     padding: 20px 0;

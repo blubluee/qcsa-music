@@ -32,11 +32,13 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper {
-  width: 100%;
+  width: 100% !important;
   padding: 30px;
   // font-size: .9em;
-
+  margin: 0 0 !important;
+  box-sizing: border-box;
   .list {
+    width: 100%;
     display: flex;
     align-items: center;
     height: 3em;

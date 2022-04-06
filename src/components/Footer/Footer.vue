@@ -27,8 +27,10 @@ export default {
 </script>
 <style lang="stylus" scoped>
 .footer {
-  width: 100%;
+  width: 100vw;
   .copyright {
+    max-width: 65%;
+    margin: 0 auto;
     padding: 1.3rem 0;
     .container {
       padding: 0;
