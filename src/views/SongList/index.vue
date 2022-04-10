@@ -170,6 +170,8 @@ export default {
 <style lang="scss" scoped>
 .wrapper {
   position: relative;
+  width: 65%;
+  margin: 0 auto;
   .drawer {
     position: absolute;
     width: 680px;

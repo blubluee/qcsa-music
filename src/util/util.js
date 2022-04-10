@@ -12,10 +12,21 @@ export default {
     return result
   },
 
-  // 转换时间戳
+  // 转换时间戳 格式为：DD MM YYYY
   formatTime(time) {
     const date = dayjs(time).format('DD/MM/YYYY')
     return date.slice(-2)
-  }
+  },
+
+  // 转换时间戳 格式为：YYYY MM DD
+  formatTime_Y(time) {
+    const data = dayjs(time).format('YYYY-MM-DD')
+    return data
+  },
+  // 转换时间戳, 只要日
+  formatTime_D(time) {
+    const date = dayjs(time).format('DD/MM/YYYY')
+    return date.slice(0, 2)
+  },
 
 }

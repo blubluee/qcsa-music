@@ -8,23 +8,36 @@
       <div class="time">时长</div>
     </div>
     <div class="list"
-         v-for="(item, index) in list"
+         v-for="(item, index) in songs"
          :key="index">
       <div class="num">{{ index + 1 }}</div>
-      <div class="song"><img :src="item.song.al.picUrl"><span>{{ item.song.name }}</span></div>
-      <div class="singer">{{ item.song.ar[0].name }}</div>
-      <div class="cd">{{ item.song.al.name }}</div>
-      <div class="time">{{ item.song.dt }}</div>
+      <div class="song"><img :src="item.al && item.al.picUrl"><span>{{ item.name }}</span></div>
+      <div class="singer">{{ item.ar[0].name }}</div>
+      <div class="cd">{{ item.al && item.al.name }}</div>
+      <div class="time">{{ item.dt }}</div>
     </div>
   </div>
 </template>
 
 <script>
+import util from '@/util/util'
 export default {
   props: {
     list: {
       Array,
-      required: true
+      default: () => {}
+    },
+    songs: {
+      Array,
+      required:true
+    }
+  },
+  watch: {
+    songs(newValue) {
+      newValue.map((item) => {
+        item.dt = util.formatSecond(item.dt)
+        return item
+      })
     }
   }
 }

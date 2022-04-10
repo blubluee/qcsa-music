@@ -13,7 +13,9 @@
             :class="{active:currentIndex1==index}"
             @click="handleTag(item.value, 'area', 'currentIndex1', index)">{{ item.label }}</span>
     </div> -->
-    <Video :videoList="videoList"></Video>
+    <div class="video">
+          <Video :videoList="videoList"></Video>
+    </div>
     <div class="pagination">
       <button :disabled="offset<=0" @click="changePage('prev')">上一页</button>
       <button @click="changePage('next')">下一页</button>
@@ -119,6 +121,8 @@ export default {
 .wrapper {
   position: relative;
   user-select: none;
+  width: 65%;
+  margin: 0 auto;
   .pagination {
     max-width: 300px;
     margin: 0 auto;
@@ -184,6 +188,9 @@ export default {
         color: rgb(49, 187, 187);
       }
     }
+  }
+  .video {
+    width: 100%;
   }
 }
 </style>

@@ -11,6 +11,7 @@
           </div>
           <div class="body">
             <SongList :list="songRecord"
+                      :songs="songs"
                       v-if="songRecord.length>0"></SongList>
             <el-empty description="有没有一种可能是网卡了"
                       v-else></el-empty>
@@ -162,6 +163,11 @@ export default {
     },
     gender () {
       return this.profile.gender === 1 ? '男' : '女'
+    },
+    songs() {
+      return this.songRecord.map((item) => {
+        return item.song
+      })
     }
   }
 }
@@ -185,7 +191,7 @@ export default {
       margin: 0;
       position: relative;
       height: auto;
-      top: 18em;
+      top: 23em;
       display: flex;
       // // grid-template-rows: ;
       // grid-template-columns: 4fr 2fr;

@@ -5,7 +5,8 @@
         <div class="item"
              :class="{two:isTwo}"
              v-for="item in recommandList"
-             :key="item.id">
+             :key="item.id"
+             @click="goInfo(item.id)">
           <img :src="item.picUrl || item.coverImgUrl">
           <p class="info">{{ item.name }}</p>
         </div>
@@ -24,6 +25,16 @@ export default {
         Boolean,
         default: false
       }
+  },
+  methods: {
+    goInfo(id) {
+      this.$router.push({
+        name: 'slInfo',
+        params: {
+          id
+        }
+      })
+    }
   }
 }
 </script>

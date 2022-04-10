@@ -67,6 +67,14 @@ const routes = [{
         meta: {
           isShow: true
         }
+      },
+      {
+        path: 'slInfo',
+        name: 'slInfo',
+        component: () => import('@/views/song_info'),
+        meta: {
+          isShow: true
+        }
       }
     ],
     

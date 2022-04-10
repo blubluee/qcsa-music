@@ -42,6 +42,8 @@ export default {
 
 <style lang='scss' scoped>
 .wrapper {
+  width: 65%;
+  margin: 0 auto;
   .feature {
     font-size: 20px;
     padding-bottom: 9px;

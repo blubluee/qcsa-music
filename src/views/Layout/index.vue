@@ -17,12 +17,11 @@ export default {
 
 <style lang="scss" scoped>
 .layout {
-  width: 100%;
+  width: 100vw !important;
   min-height: calc(100vh - 65px);
   z-index: 998;
   width: auto;
-  min-width: 1024px;
-  padding-top: 70px;
+  // min-width: 1024px;
   .fluid {
     min-height: 100%;
     padding: 20px 0;

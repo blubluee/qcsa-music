@@ -20,5 +20,16 @@ export const reqSingerInfo = (id) => {
   })
 }
 
+// 获取歌手单曲
+export const reqSingerSongs = (id) => {
+  return request({
+    url: '/artists',
+    method: 'get',
+    params: {
+      id
+    }
+  })
+}
+
 
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="video-wrapper">
     <div class="video"
          v-for="(item, index) in videoList"
          :key="index">
@@ -29,7 +29,7 @@ export default {
 <style lang="scss" scoped>
 $videoHeight: 195px;
 $fontSize: 30px;
-.wrapper {
+.video-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

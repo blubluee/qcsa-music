@@ -29,3 +29,49 @@ export const reqSongList = ({order, cat, limit, offset}) => {
     }
   })
 } 
+
+// 获取歌单详情
+export const reqSlInfo = (id) => {
+  return request({
+    url: '/playlist/detail',
+    method: 'get',
+    params: {
+      id
+    }
+  })
+}
+
+// 获取歌单收藏者
+export const reqSubers = (id, limit = 30) => {
+  return request({
+    url: '/playlist/subscribers',
+    method: 'get',
+    params: {
+      id,
+      limit
+    }
+  })
+}
+
+// 获取相关歌单推荐
+export const reqRec = (id) => {
+  return request({
+    url: '/related/playlist',
+    method: 'get',
+    params: {
+      id
+    }
+  })
+}
+
+// 获取歌单评论
+export const reqCom = (id) => {
+  return request({
+    url: '/comment/playlist',
+    method: 'get',
+    params: {
+      id
+    }
+  })
+}
+

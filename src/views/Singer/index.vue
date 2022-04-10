@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <div class="nav">
       <span v-for="(item, index) in langs"
             :key="index"
@@ -130,42 +130,46 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.nav {
-  height: 30px;
-  line-height: 30px;
-  margin-bottom: 20px;
-  span {
-    display: inline-block;
-    padding: 0 15px;
-    margin-right: 20px;
-    text-align: center;
-    border-radius: 16px;
-    background-color: rgb(240, 248, 250);
-    cursor: pointer;
-    &.active {
-      color: #fff;
-      background-color: rgb(223, 21, 21);
+.wrapper {
+  width: 65%;
+  margin: 0 auto;
+  .nav {
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 20px;
+    span {
+      display: inline-block;
+      padding: 0 15px;
+      margin-right: 20px;
+      text-align: center;
+      border-radius: 16px;
+      background-color: rgb(240, 248, 250);
+      cursor: pointer;
+      &.active {
+        color: #fff;
+        background-color: rgb(223, 21, 21);
+      }
+    }
+
+    & > span + span:hover {
+      color: rgb(19, 176, 248);
     }
   }
-  
-  & > span + span:hover {
-    color: rgb(19, 176, 248);
-  }
-}
-.nav.letter {
-  margin-bottom: 30px;
-  span {
-    padding: 0 6px;
-    margin-right: 10px;
-  }
-  span:first-child {
-    padding: 0 15px;
-    margin-right: 20px;
-  }
-  & > span + span { 
-    height: 20px;
-    line-height: 20px;
-    border-radius: 50%;
+  .nav.letter {
+    margin-bottom: 30px;
+    span {
+      padding: 0 6px;
+      margin-right: 10px;
+    }
+    span:first-child {
+      padding: 0 15px;
+      margin-right: 20px;
+    }
+    & > span + span {
+      height: 20px;
+      line-height: 20px;
+      border-radius: 50%;
+    }
   }
 }
 </style>
