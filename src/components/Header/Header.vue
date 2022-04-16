@@ -65,9 +65,11 @@
                 </div>
                 <div class="his-tags">
                   <el-tag closable
+                          @close="closeTag(index)"
                           type="info"
                           size="small"
-                          class="tags">{{ 'text' }}
+                          class="tags"
+                          v-for="(item, index) in tags" :key="index">{{ item }}
                   </el-tag>
                 </div>
               </div>
@@ -124,7 +126,8 @@ export default {
   },
   computed: {
     ...mapState({
-      profile: (state) => state.user.profile
+      profile: (state) => state.user.profile,
+      tags: (state) => state.music.keywordList
     }),
     // 获取用户登录状态
     loginStatu () {
@@ -177,13 +180,16 @@ export default {
       this.isSearch = true
       this.keyword = ''
       this.getHotSearchList()
+    },
+    closeTag(index) {
+      this.$store.commit('music/DELETEKEYWORD', index)
     }
   }
 }
 </script>
 <style lang="scss" scoped>
 .wra {
-  width: 100vw;
+  width: 100%;
   #wrapper {
     width: 65%;
     margin: 0 auto; 

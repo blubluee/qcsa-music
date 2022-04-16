@@ -4,6 +4,7 @@ const state ={
   currentSong: [],  // 当前播放的歌曲的信息
   playing: false,  // 播放状态
   url: '',  // 音乐的url
+  isPlay: false
 }
 
 const mutations = {
@@ -11,7 +12,8 @@ const mutations = {
     state.currentSong = song
   },
   CHANGEPLAYING(state, type) {
-    state.playing = type
+    state.playing = type,
+    state.isPlay = true
   },
   GETMUSICURL(state, url) {
     state.url = url

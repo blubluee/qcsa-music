@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" v-show="playing">
+  <div class="wrapper" v-show="isPlay">
     <div class="player">
       <div class="player-left">
         <span class="iconfont icon-shangyishou"></span>
@@ -65,7 +65,6 @@
 </template>
 
 <script>
-import BarProgress from './bar-progress'
 import util from '@/util/util'
 import { mapState, mapGetters } from 'vuex'
 export default {
@@ -85,9 +84,6 @@ export default {
       this.process = (this.currentTime / duration * 100).toFixed(15)
       this.process = Number(this.process)
     })
-  },
-  components: {
-    BarProgress
   },
   methods: {
     formatTime (value) {
@@ -159,10 +155,11 @@ export default {
     // },
     ...mapState({
       currentSong: (state) => state.player.currentSong,
-      musicUrl: (state) => state.player.url
+      musicUrl: (state) => state.player.url,
+      isPlay: (state) => state.player.isPlay
     }),
     ...mapGetters({
-      playing: 'player/playing'
+      playing: 'player/playing',
     })
   },
   watch: {

@@ -18,7 +18,10 @@
               <el-tag closable
                       type="info"
                       size="small"
-                      class="tags">{{ 'text' }}
+                      class="tags"
+                      v-for="(item, index) in tags"
+                      :key="index"
+                      >{{ item }}
               </el-tag>
             </div>
           </div>
@@ -45,6 +48,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   data () {
     return {
@@ -61,16 +65,21 @@ export default {
     search() {
       this.$store.commit('music/SAVESEARCHHIS', this.keyword)
     }
+  },
+  computed: {
+    ...mapState({
+      tags: (state) => state.music.keywordList
+    })
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .wrapper {
-  width: 55vw;
-  height: 100vh;
+  width: 100%;
+  // height: 100%;
   .main {
-    // width: 50%;
+    width: 55%;
     height: 65%;
     border-radius: 5px;
     z-index: 10000;

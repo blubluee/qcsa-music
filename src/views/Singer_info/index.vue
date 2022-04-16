@@ -65,7 +65,6 @@
 </template>
 
 <script>
-import util from '@/util/util'
 import SongList from '@/components/songList'
 export default {
   data () {
@@ -99,9 +98,6 @@ export default {
       const result = await this.$API.singer.reqSingerSongs(id)
       if (result.code === 200) {
         this.songs = result.hotSongs
-        for (const item of this.songs) {
-            item.dt = util.formatSecond(item.dt)
-        }
         if (this.$route.params.id) {
           localStorage.setItem('singerId', this.$route.params.id)
         }

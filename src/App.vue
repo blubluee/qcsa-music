@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-      <Header v-show="$route.meta.isShow"></Header>
+      <div class="app-wrapper">
+        <Header v-show="$route.meta.isShow"></Header>
       <router-view />
       <Footer v-show="$route.meta.isShow"></Footer>
       <div class="fly bg-fly-circle1"></div>
@@ -9,6 +10,7 @@
       <div class="fly bg-fly-circle4"></div>
       <BackTop></BackTop>
       <Playbar></Playbar>
+      </div>
   </div>
 </template>
 
@@ -33,9 +35,13 @@ export default {
 <style lang="scss" scoped>
 @import "./assets/styles/iconfont.css";
 #app {
-  width: 65%;
-  margin-top: 10px;
+  width: 100%;
+  .app-wrapper {
+    margin-top: 10px;
+    // overflow-x: hidden;
+  }
 }
+
 .fly {
   pointer-events: none;
   position: fixed;

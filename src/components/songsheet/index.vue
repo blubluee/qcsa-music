@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="body">
+    <div class="body"
+         v-show="!loading">
       <div class="wrapper">
         <div class="item"
              :class="{two:isTwo}"
@@ -12,28 +13,56 @@
         </div>
       </div>
     </div>
+
+    <div class="body loading"
+         v-show="loading">
+      <div class="wrapper">
+        <div class="item"
+             :class="{two:isTwo}"
+             v-for="n in 30"
+             :key="n">
+          <div class="img"></div>
+          <p class="info"></p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
+  data () {
+    return {
+      loading: true
+    }
+  },
   props: {
     recommandList: {
-      type: Array
+      type: Array,
+      default: {}
     },
     isTwo: {
-        Boolean,
-        default: false
-      }
+      Boolean,
+      default: false
+    }
   },
   methods: {
-    goInfo(id) {
+    goInfo (id) {
       this.$router.push({
-        name: 'slInfo',
+        name: 'slInfo', 
         params: {
           id
         }
       })
+    }
+  },
+  watch: {
+    recommandList(newValue, oldValue) {
+      if (newValue != {}) {
+        setTimeout(() => {
+          this.loading = false
+        }, 300);
+      }
     }
   }
 }
@@ -53,12 +82,18 @@ export default {
       position: relative;
       border-radius: 10px;
       margin-bottom: 7px;
-      img {
-        position: relative;
+      cursor: pointer;
+      .img {
         width: 100%;
-        padding-right: 10px;
-        margin-bottom: 3px;
+        height: 8em;
+        margin-bottom: .6em;                                   
       }
+      img {
+          position: relative;
+          width: 100%;
+          // padding-right: 10px;
+          margin-bottom: 3px;
+        }
       .info {
         width: 100%;
         height: auto;
@@ -75,4 +110,35 @@ export default {
     }
   }
 }
+.img:empty,
+.info:empty {
+  background-color: #ededed;
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, .5) 50%,
+    rgba(255, 255, 255, 0) 60%
+  ) #ededed;
+  background-size: 200% 100%;
+  background-position-x: 180%;
+  animation: 1s loading ease-in-out infinite;
+}
+
+@keyframes loading {
+  to {
+    background-position-x: -20%;
+  }
+}
+
+.img:empty {
+  animation-delay: .1s;
+}
+
+.info:empty {
+  width: 100%;
+  min-height: 2em;
+  border-radius: 4px;
+  animation-delay: .15s;
+}
+
 </style>

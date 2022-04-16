@@ -12,6 +12,10 @@ const mutations = {
   // 保存搜索历史
   SAVESEARCHHIS(state, keyword) {
     state.keywordList.push(keyword)
+  },
+  // 删除关键字
+  DELETEKEYWORD(state, index) {
+    state.keywordList.splice(index, 1)
   }
 }
 

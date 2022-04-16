@@ -17,10 +17,9 @@ export default {
 
 <style lang="scss" scoped>
 .layout {
-  width: 100vw !important;
+  width: 100%;
   min-height: calc(100vh - 65px);
   z-index: 998;
-  width: auto;
   // min-width: 1024px;
   .fluid {
     min-height: 100%;

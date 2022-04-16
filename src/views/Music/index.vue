@@ -1,18 +1,18 @@
 <template>
   <div class="wrapper">
     <div class="main">
-    <Carousel></Carousel>
-    <div>
-      <p style="margin:15px 0;font-size:20px; user-select:none;">推荐歌单</p>
-      <SongSheet :recommandList='recommandList'></SongSheet>
-    </div>
-    <RecommandSong></RecommandSong>
-    <div>
-      <p style="margin:15px 0;font-size:20px; user-select:none;">推荐歌手</p>
-      <RecommandSinger :singers='singers'></RecommandSinger>
-    </div>
+      <Carousel></Carousel>
+      <div>
+        <p style="margin:15px 0;font-size:20px; user-select:none;">推荐歌单</p>
+        <SongSheet :recommandList='recommandList'></SongSheet>
+      </div>
+      <RecommandSong></RecommandSong>
+      <div>
+        <p style="margin:15px 0;font-size:20px; user-select:none;">推荐歌手</p>
+        <RecommandSinger :singers='singers'></RecommandSinger>
+      </div>
 
-  </div>
+    </div>
   </div>
 </template>
 
@@ -21,7 +21,6 @@ import Carousel from '@/components/carousel'
 import SongSheet from '@/components/songsheet'
 import RecommandSong from '@/components/recommandSong'
 import RecommandSinger from '@/components/recommandSinger'
-import Search from '@/components/Search'
 
 export default {
   data () {
@@ -44,7 +43,6 @@ export default {
     SongSheet,
     RecommandSong,
     RecommandSinger,
-    Search,
   },
   methods: {
     async getRecommandList () {
@@ -71,9 +69,9 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper {
-  width: 100vw;
+  width: 100%;
   .main {
-    max-width: 65%;
+    width: 65%;
     margin: 0 auto;
   }
 }

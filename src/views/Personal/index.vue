@@ -175,17 +175,19 @@ export default {
 
 <style lang="scss" scoped>
 .wra {
-  width: 100vw;
+  width: 100%;
+  position: relative;
   .wrapper {
     width: 65%;
     margin: 0 auto;
-    height: auto;
+    // height: auto;
+    // position: relative;
     .bg {
       position: absolute;
-      width: 100vw;
+      width: 100%;
       height: 300px;
       left: 0;
-      top: 70px;
+      top: 0;
     }
     .grid {
       margin: 0;
